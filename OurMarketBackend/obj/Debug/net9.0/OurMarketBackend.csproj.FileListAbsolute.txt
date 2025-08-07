@@ -7,3 +7,4 @@
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/OurMarketBackend.RazorAssemblyInfo.cache
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/OurMarketBackend.RazorAssemblyInfo.cs
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/OurMarketBackend.sourcelink.json
+/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/OurMarketBackend.csproj.AssemblyReference.cache

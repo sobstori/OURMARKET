@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using OurMarketBackend.data; 
+using OURMARKET.data; 
 
 var builder = WebApplication.CreateBuilder(args);
 

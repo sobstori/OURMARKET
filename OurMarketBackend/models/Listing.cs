@@ -1,4 +1,4 @@
-namespace OurMarketBackend.models
+namespace OURMARKET.models
 {
     public class Listing
     {

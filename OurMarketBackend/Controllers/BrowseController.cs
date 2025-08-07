@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using OURMARKET.Models;
+using OURMARKET.models;
 using System.Collections.Generic;
 
 namespace OURMARKET.Controllers
