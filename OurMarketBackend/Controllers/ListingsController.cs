@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using OURMARKET.Data;
-using OURMARKET.Models;
+using OurMarketBackend.Data;
+using OurMarketBackend.Models;
 using System.Linq;
 
-namespace OURMARKET.Controllers
+namespace OurMarketBackend.Controllers
 {
     public class ListingsController : Controller
     {

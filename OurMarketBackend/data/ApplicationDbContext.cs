@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using OURMARKET.Models;
+using OurMarketBackend.Models;
 
-namespace OURMARKET.Data
+namespace OurMarketBackend.Data
 {
     public class ApplicationDbContext : DbContext
     {
