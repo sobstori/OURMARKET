@@ -127,8 +127,17 @@ body {
 /* Listings Grid */
 .listings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 columns*/
   gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 900px) {
+  .listings-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium */
+  }
 }
 
 .listing-card {
@@ -137,6 +146,9 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
 }
 
 .listing-card:hover {
