@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using OURMARKET.Data;
-using OURMARKET.Models;
+using OurMarketBackend.data;
+using OurMarketBackend.models;
 using System.Linq;
 
 namespace OURMARKET.Controllers
