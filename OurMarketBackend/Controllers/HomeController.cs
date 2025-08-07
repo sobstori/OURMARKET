@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using OURMARKET.models;
+using OurMarketBackend.Models;
 
 namespace OurMarketBackend.Controllers;
 

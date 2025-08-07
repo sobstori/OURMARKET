@@ -1,20 +1,43 @@
 using Microsoft.AspNetCore.Mvc;
-using OURMARKET.models;
-using System.Collections.Generic;
+using OurMarketBackend.Data;
+using OurMarketBackend.Models; 
 
-namespace OURMARKET.Controllers
+namespace OurMarketBackend.Controllers
 {
     public class BrowseController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
+        public BrowseController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: /Browse or /Browse/Index
         public IActionResult Index()
         {
-            var listings = new List<Listing>
-            {
-                new Listing { ImageUrl = "/images/phone.jpg", Title = "iPhone 13 - Like New", Price = "$650", Location = "Los Angeles" },
-                new Listing { ImageUrl = "/images/couch.jpg", Title = "Vintage Couch", Price = "$120", Location = "Chicago" },
-                new Listing { ImageUrl = "/images/coffee.jpg", Title = "Part-Time Barista Job", Price = "$15/hr", Location = "New York" }
-            };
+            var listings = _context.Listings.ToList();
             return View(listings);
+        }
+
+        // GET: /Browse/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: /Browse/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Listing listing)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Listings.Add(listing);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(listing);
         }
     }
 }

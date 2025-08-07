@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using OURMARKET.models;
+using OURMARKET.Models;
 
-namespace OURMARKET.data
+namespace OURMARKET.Data
 {
     public class ApplicationDbContext : DbContext
     {
