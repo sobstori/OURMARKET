@@ -3,9 +3,9 @@ using OurMarketBackend.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register ApplicationDbContext using an in-memory database
+// Register ApplicationDbContext with SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseInMemoryDatabase("ListingsDB")); 
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

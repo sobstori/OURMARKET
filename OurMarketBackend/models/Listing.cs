@@ -13,7 +13,7 @@ namespace OurMarketBackend.Models
 
         [Required(ErrorMessage = "Please enter a price")]
         [Range(0, double.MaxValue, ErrorMessage = "Price must be a positive number")]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
 
         [Required(ErrorMessage = "Please enter a location")]
         public string Location { get; set; } = null!;
