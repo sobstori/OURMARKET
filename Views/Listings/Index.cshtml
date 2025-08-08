@@ -1,0 +1,96 @@
+@model IEnumerable<OurMarketBackend.Models.Listing>
+
+@{
+    ViewData["Title"] = "Browse Listings";
+    var q = (string)Context.Request.Query["q"];
+    var category = (string)Context.Request.Query["category"];
+    var location = (string)Context.Request.Query["location"];
+}
+
+
+<h1>Browse Listings</h1>
+
+<form method="get" class="filters">
+    <input type="text" name="q" value="@Context.Request.Query["q"]" placeholder="Search listings..." />
+
+    <select name="category">
+        <option value="">All Categories</option>
+        @if (category == "Electronics")
+        {
+            <option value="Electronics" selected="selected">Electronics</option>
+        }
+        else
+        {
+            <option value="Electronics">Electronics</option>
+        }
+        @if (category == "Furniture")
+        {
+            <option value="Furniture" selected="selected">Furniture</option>
+        }
+        else
+        {
+            <option value="Furniture">Furniture</option>
+        }
+        @if (category == "Clothing")
+        {
+            <option value="Clothing" selected="selected">Clothing</option>
+        }
+        else
+        {
+            <option value="Clothing">Clothing</option>
+        }
+        @if (category == "Jobs")
+        {
+            <option value="Jobs" selected="selected">Jobs</option>
+        }
+        else
+        {
+            <option value="Jobs">Jobs</option>
+        }
+    </select>
+
+    <select name="location">
+        <option value="">All Locations</option>
+        @if (location == "New York")
+        {
+            <option value="New York" selected="selected">New York</option>
+        }
+        else
+        {
+            <option value="New York">New York</option>
+        }
+        @if (location == "Los Angeles")
+        {
+            <option value="Los Angeles" selected="selected">Los Angeles</option>
+        }
+        else
+        {
+            <option value="Los Angeles">Los Angeles</option>
+        }
+        @if (location == "Chicago")
+        {
+            <option value="Chicago" selected="selected">Chicago</option>
+        }
+        else
+        {
+            <option value="Chicago">Chicago</option>
+        }
+    </select>
+
+
+    <button type="submit">Apply Filter</button>
+</form>
+
+<section class="listings-grid">
+    @foreach (var listing in Model)
+    {
+        <a class="listing-card"
+           asp-controller="Listings"
+           asp-action="Details"
+           asp-route-id="@listing.Id">
+            <img src="@(listing.ImageUrl ?? "/img/placeholder.png")" alt="@listing.Title" />
+            <h2>@listing.Title</h2>
+            <p>@listing.Price · @listing.Location</p>
+        </a>
+    }
+</section>

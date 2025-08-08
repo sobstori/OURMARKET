@@ -1,0 +1,44 @@
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<OurMarketBackend.Models.ApplicationUser> UserManager
+@inject SignInManager<OurMarketBackend.Models.ApplicationUser> SignInManager
+@model OurMarketBackend.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Account";
+}
+
+
+<h2>Welcome, @(Model?.FirstName ?? User.Identity.Name)!</h2>
+
+<div style="max-width:400px; margin:40px auto; padding:30px; border:1px solid #eee; border-radius:8px; background:#fafafa;">
+    <h2 style="text-align:center;">Account Details</h2>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <form asp-action="Account" method="post">
+            <div style="margin-top:20px;">
+                <label>Email:</label>
+                <input type="email" value="@Model.Email" readonly class="form-control" />
+            </div>
+            <div style="margin-top:10px;">
+                <label>First Name:</label>
+                <input type="text" name="FirstName" value="@Model.FirstName" class="form-control" />
+            </div>
+            <div style="margin-top:10px;">
+                <label>Last Name:</label>
+                <input type="text" name="LastName" value="@Model.LastName" class="form-control" />
+            </div>
+            <div style="margin-top:10px;">
+                <label>Phone Number:</label>
+                <input type="text" name="PhoneNumber" value="@Model.PhoneNumber" class="form-control" />
+            </div>
+            <div style="margin-top:10px;">
+                <label>State:</label>
+                <input type="text" name="State" value="@Model.State" class="form-control" />
+            </div>
+            <button type="submit" class="cta-button" style="margin-top:20px;">Save Changes</button>
+        </form>
+    }
+    else
+    {
+        <div class="text-danger" style="text-align:center;">You are not logged in.</div>
+    }
+</div>

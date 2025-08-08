@@ -1,0 +1,45 @@
+@model OurMarketBackend.Models.Listing
+
+@{
+    ViewData["Title"] = "Post a New Listing";
+}
+
+<h1>Post a New Listing</h1>
+
+<form asp-action="Create" method="post" class="post-form">
+    <label asp-for="Title"></label>
+    <input asp-for="Title" placeholder="Ex: Selling my MacBook Air" required />
+    <span asp-validation-for="Title"></span>
+
+    <label asp-for="Price"></label>
+    <input asp-for="Price" placeholder="Ex: 700 or 20/hr" required />
+    <span asp-validation-for="Price"></span>
+
+    <label asp-for="Category"></label>
+    <select asp-for="Category" required>
+        <option value="">Select a category</option>
+        <option>Electronics</option>
+        <option>Furniture</option>
+        <option>Clothing</option>
+        <option>Jobs</option>
+        <option>Other</option>
+    </select>
+    <span asp-validation-for="Category"></span>
+
+    <label asp-for="Location"></label>
+    <input asp-for="Location" placeholder="Ex: New York" required />
+    <span asp-validation-for="Location"></span>
+
+    <label asp-for="ImageUrl">Image URL</label>
+    <input asp-for="ImageUrl" placeholder="Ex: https://imgur.com/example.jpg" required />
+
+    <label asp-for="Description"></label>
+    <textarea asp-for="Description" rows="5" placeholder="Describe your listing..." ></textarea>
+    <span asp-validation-for="Description"></span>
+
+    <button type="submit" class="cta-button">Post Listing</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
