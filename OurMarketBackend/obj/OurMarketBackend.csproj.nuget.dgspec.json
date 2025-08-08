@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj": {}
+    "C:\\Users\\saint\\Source\\Repos\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj": {
+    "C:\\Users\\saint\\Source\\Repos\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj",
+        "projectUniqueName": "C:\\Users\\saint\\Source\\Repos\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj",
         "projectName": "OurMarketBackend",
-        "projectPath": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj",
-        "packagesPath": "C:\\Users\\jluke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\obj\\",
+        "projectPath": "C:\\Users\\saint\\Source\\Repos\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj",
+        "packagesPath": "C:\\Users\\saint\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\saint\\Source\\Repos\\OURMARKET\\OurMarketBackend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jluke\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\saint\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -86,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,30 @@
+## Ignore Visual Studio cache and build files
+.vs/
+*.user
+*.suo
+
+## Build results
+bin/
+obj/
+
+## Packages
+*.nupkg
+packages/
+
+## Logs
+*.log
+
+## Local database
+*.db
+*.db-shm
+*.db-wal
+
+## Temporary files
+~$*
+*.tmp
+
+## macOS
+.DS_Store
+
+## Windows
+Thumbs.db

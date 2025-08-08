@@ -24,5 +24,9 @@ namespace OurMarketBackend.Models
 
         [Required(ErrorMessage = "Please select a category")]
         public string Category { get; set; } = null!;
+
+        //ownership
+        [Required] public string UserId { get; set; } = null!;
+        public ApplicationUser User { get; set; } = null!;
     }
 }

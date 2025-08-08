@@ -72,12 +72,21 @@ namespace OurMarketBackend.Controllers
         [HttpGet]
         public async Task<IActionResult> Account()
         {
-            if (User?.Identity == null || !User.Identity.IsAuthenticated)
+            if (User?.Identity?.IsAuthenticated != true)
                 return RedirectToAction("Login");
 
             var user = await _userManager.GetUserAsync(User);
+
+            // Auto sign-out if the user no longer exists in the DB (for DB conflicts or deletions)
+            if (user == null)
+            {
+                await _signInManager.SignOutAsync();
+                return RedirectToAction("Login");
+            }
+
             return View(user);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Account(string FirstName, string LastName, string PhoneNumber, string State)
