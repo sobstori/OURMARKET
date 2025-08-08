@@ -4,7 +4,14 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>Log In to Your Account</h1>
+
+<div style="text-align:center; margin-bottom:20px;">
+    <h1>Log In to Your Account</h1>
+    @if (TempData["LoginMessage"] != null)
+    {
+        <div class="login-message">@TempData["LoginMessage"]</div>
+    }
+</div>
 
 <form asp-controller="Account" asp-action="Login" method="post" class="login-form">
     <label asp-for="Email"></label>

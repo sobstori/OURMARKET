@@ -1,4 +1,8 @@
-﻿@{
+﻿@if (TempData["LoginMessage"] != null)
+{
+    <div class="login-message" style="text-align:center; color:green; font-weight:bold;">@TempData["LoginMessage"]</div>
+}
+@{
     ViewData["Title"] = "Home";
 }
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/OurMarketBackend.csproj": {}
+    "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj": {}
   },
   "projects": {
-    "/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/OurMarketBackend.csproj": {
+    "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/OurMarketBackend.csproj",
+        "projectUniqueName": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj",
         "projectName": "OurMarketBackend",
-        "projectPath": "/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/OurMarketBackend.csproj",
-        "packagesPath": "/Users/tori/.nuget/packages/",
-        "outputPath": "/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/",
+        "projectPath": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj",
+        "packagesPath": "C:\\Users\\jluke\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tori/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jluke\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -44,6 +44,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.8, )"
@@ -82,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
