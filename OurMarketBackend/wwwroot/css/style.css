@@ -250,6 +250,24 @@ body {
   text-decoration: underline;
 }
 
+/* Logout button*/
+.logout-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.logout-button:hover {
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+
 /* Dashboard Layout */
 .dashboard {
   display: grid;

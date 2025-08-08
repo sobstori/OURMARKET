@@ -194,7 +194,6 @@
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/OurMarketBackend.pdb
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/OurMarketBackend.genruntimeconfig.cache
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/ref/OurMarketBackend.dll
-/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/compressed/ek0qqfq9l3-7q0fditno9.gz
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/bin/Debug/net9.0/Microsoft.Data.Sqlite.dll
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Sqlite.dll
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/bin/Debug/net9.0/SQLitePCLRaw.batteries_v2.dll
@@ -454,3 +453,4 @@ C:/Users/jluke/OneDrive/Documents/GitHub/OURMARKET/OurMarketBackend/bin/Debug/ne
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/bin/Debug/net9.0/Microsoft.Extensions.Identity.Core.dll
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/bin/Debug/net9.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/compressed/ek0qqfq9l3-bwy66in2ny.gz

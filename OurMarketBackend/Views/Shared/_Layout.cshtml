@@ -16,13 +16,9 @@
             <a href="~/Browse">Browse</a>
             <a href="~/Listings/Create">Post</a>
             <a href="~/Account/Account">Account</a>
-        </nav>
-        <div class="account-section">
+        
             @if (User?.Identity != null && User.Identity.IsAuthenticated)
             {
-                @inject UserManager<OurMarketBackend.Models.ApplicationUser> UserManager
-                var user = await UserManager.GetUserAsync(User);
-                <span>Welcome, @(user?.FirstName ?? User.Identity.Name)!</span>
                 <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
                     <button type="submit" class="logout-button">Logout</button>
                 </form>
@@ -32,7 +28,7 @@
                 <a href="~/Account/Login">Login</a>
                 <a href="~/Account/Register">Register</a>
             }
-        </div>
+        <nav>
     </header>
     @RenderBody()
     <footer>
