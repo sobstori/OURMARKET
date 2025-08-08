@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OurMarketBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+460e85927db0281e3650d2897f9676e2b3337de5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f74c0f6cd59ee937cc5ba373f43ada16d9f0c56")]
 [assembly: System.Reflection.AssemblyProductAttribute("OurMarketBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OurMarketBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

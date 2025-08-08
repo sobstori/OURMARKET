@@ -6,6 +6,9 @@
     ViewData["Title"] = "Account";
 }
 
+
+<h2>Welcome, @(Model?.FirstName ?? User.Identity.Name)!</h2>
+
 <div style="max-width:400px; margin:40px auto; padding:30px; border:1px solid #eee; border-radius:8px; background:#fafafa;">
     <h2 style="text-align:center;">Account Details</h2>
     @if (User.Identity.IsAuthenticated)

@@ -4,22 +4,36 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+<<<<<<< HEAD
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\saint\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+=======
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/tori/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/tori/.nuget/packages/</NuGetPackageFolders>
+>>>>>>> 27260f80c13c85597ff80cd78ac4a64fab17f0b8
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.14.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+<<<<<<< HEAD
     <SourceRoot Include="C:\Users\saint\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+=======
+    <SourceRoot Include="/Users/tori/.nuget/packages/" />
+>>>>>>> 27260f80c13c85597ff80cd78ac4a64fab17f0b8
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\9.0.8\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\9.0.8\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.codeanalysis.analyzers\3.3.4\buildTransitive\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('$(NuGetPackageRoot)microsoft.codeanalysis.analyzers\3.3.4\buildTransitive\Microsoft.CodeAnalysis.Analyzers.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\9.0.8\build\net8.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\9.0.8\build\net8.0\Microsoft.EntityFrameworkCore.Design.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/9.0.8/buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/9.0.8/buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.codeanalysis.analyzers/3.3.4/buildTransitive/Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('$(NuGetPackageRoot)microsoft.codeanalysis.analyzers/3.3.4/buildTransitive/Microsoft.CodeAnalysis.Analyzers.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design/9.0.8/build/net8.0/Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design/9.0.8/build/net8.0/Microsoft.EntityFrameworkCore.Design.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+<<<<<<< HEAD
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\saint\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.4</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\saint\.nuget\packages\microsoft.entityframeworkcore.tools\9.0.8</PkgMicrosoft_EntityFrameworkCore_Tools>
+=======
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/tori/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">/Users/tori/.nuget/packages/microsoft.entityframeworkcore.tools/9.0.8</PkgMicrosoft_EntityFrameworkCore_Tools>
+>>>>>>> 27260f80c13c85597ff80cd78ac4a64fab17f0b8
   </PropertyGroup>
 </Project>
