@@ -121,7 +121,6 @@
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/scopedcss/bundle/OurMarketBackend.styles.css
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/scopedcss/projectbundle/OurMarketBackend.bundle.scp.css
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/compressed/klzax5pc5d-b9sayid5wm.gz
-/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/compressed/ek0qqfq9l3-3dmlnkttgr.gz
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/compressed/wdoqz9j1yk-61n19gt1b8.gz
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/compressed/6vjjpcm3ho-xtxxf3hu2r.gz
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/compressed/fjp70c6cdx-bqjiyaj88i.gz
@@ -195,3 +194,4 @@
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/OurMarketBackend.pdb
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/OurMarketBackend.genruntimeconfig.cache
 /Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/ref/OurMarketBackend.dll
+/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/Debug/net9.0/compressed/ek0qqfq9l3-7q0fditno9.gz
