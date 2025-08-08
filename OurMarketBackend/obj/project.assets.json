@@ -3319,19 +3319,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jluke\\.nuget\\packages\\": {}
+    "/Users/tori/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj",
+      "projectUniqueName": "/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/OurMarketBackend.csproj",
       "projectName": "OurMarketBackend",
-      "projectPath": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\OurMarketBackend.csproj",
-      "packagesPath": "C:\\Users\\jluke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jluke\\OneDrive\\Documents\\GitHub\\OURMARKET\\OurMarketBackend\\obj\\",
+      "projectPath": "/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/OurMarketBackend.csproj",
+      "packagesPath": "/Users/tori/.nuget/packages/",
+      "outputPath": "/Users/tori/Documents/GitHub/OURMARKET/OurMarketBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jluke\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/tori/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -3403,7 +3403,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

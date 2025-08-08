@@ -23,7 +23,9 @@
                 @inject UserManager<OurMarketBackend.Models.ApplicationUser> UserManager
                 var user = await UserManager.GetUserAsync(User);
                 <span>Welcome, @(user?.FirstName ?? User.Identity.Name)!</span>
-                <a href="~/Account/Logout">Logout</a>
+                <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
             }
             else
             {
