@@ -54,14 +54,21 @@ namespace OurMarketBackend.Controllers
 
         // POST: /Listings/Create
         [HttpPost, Authorize, ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Listing listing)
+        public async Task<IActionResult> Create(
+            [Bind("Title,Description,Price,Location,ImageUrl,Category")] Listing listing)
         {
+            // UserId isn't posted; remove it from ModelState before validating
+            ModelState.Remove(nameof(Listing.UserId));
+
             if (!ModelState.IsValid) return View(listing);
 
-            listing.UserId = _userManager.GetUserId(User)!; // tie to current user
+            listing.UserId = _userManager.GetUserId(User)!; // link to current user
+            listing.User = null; // avoid accidental attach
+
             _context.Listings.Add(listing);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
