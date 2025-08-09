@@ -15,5 +15,7 @@ namespace OurMarketBackend.Data
 
         public DbSet<Listing> Listings { get; set; }
         public DbSet<ListingImage> ListingImages => Set<ListingImage>();
+        public DbSet<Message> Messages { get; set; }
+
     }
 }

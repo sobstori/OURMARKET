@@ -1,0 +1,25 @@
+@model List<OurMarketBackend.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Inbox";
+}
+
+<h2>Inbox</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>You have no conversations yet.</p>
+}
+else
+{
+    <ul>
+        @foreach (var user in Model)
+        {
+            <li>
+                <a href="@Url.Action("Conversation", "Messages", new { otherUserId = user.Id })">
+                    @user.FirstName @user.LastName (@user.Email)
+                </a>
+            </li>
+        }
+    </ul>
+}
