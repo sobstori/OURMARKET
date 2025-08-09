@@ -21,6 +21,9 @@ packages/
 wwwroot/images/listings
 Migrations/
 
+## Prod build
+Properties
+
 ## Temporary files
 ~$*
 *.tmp
