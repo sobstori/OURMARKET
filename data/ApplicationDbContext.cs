@@ -4,6 +4,7 @@ using OurMarketBackend.Models;
 namespace OurMarketBackend.Data
 {
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using OurMarketBackend.models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -13,5 +14,6 @@ namespace OurMarketBackend.Data
         }
 
         public DbSet<Listing> Listings { get; set; }
+        public DbSet<ListingImage> ListingImages => Set<ListingImage>();
     }
 }
