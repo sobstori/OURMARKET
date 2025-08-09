@@ -1,0 +1,25 @@
+@model OurMarketBackend.ViewModels.ConversationViewModel
+
+@{
+    ViewData["Title"] = "Conversation with " + Model.OtherUser.FirstName;
+}
+
+<h2>Conversation with @Model.OtherUser.FirstName @Model.OtherUser.LastName</h2>
+
+<div>
+    @foreach (var message in Model.Messages)
+    {
+        <div style="margin-bottom:10px; padding:8px; border-radius:6px; background-color:@(message.SenderId == Model.CurrentUser.Id ? "#e60023" : "#eee"); color:@(message.SenderId == Model.CurrentUser.Id ? "#fff" : "#000"); max-width: 60%;@(message.SenderId == Model.CurrentUser.Id ? "margin-left:auto;" : "")">
+            <p>@message.Content</p>
+            <small>@message.SentAt.ToLocalTime().ToString("g")</small>
+        </div>
+    }
+</div>
+
+<form asp-action="Send" method="post" style="margin-top:20px;">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" name="ReceiverId" value="@Model.OtherUser.Id" />
+    <textarea name="Content" required rows="3" style="width: 100%; padding: 10px;" placeholder="Type your message here..."></textarea>
+    <button type="submit" class="btn btn-primary mt-2">Send</button>
+</form>

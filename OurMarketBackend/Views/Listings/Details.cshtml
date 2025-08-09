@@ -4,3 +4,6 @@
 <p><strong>Price:</strong> @Model.Price</p>
 <p><strong>Location:</strong> @Model.Location</p>
 <a asp-action="Index">Back</a>
+<a asp-controller="Messages" asp-action="Send" asp-route-receiverId="@Model.UserId" class="btn btn-primary mt-3">
+    Message Seller
+</a>

@@ -13,5 +13,7 @@ namespace OurMarketBackend.Data
         }
 
         public DbSet<Listing> Listings { get; set; }
+        public DbSet<Message> Messages { get; set; }
+
     }
 }

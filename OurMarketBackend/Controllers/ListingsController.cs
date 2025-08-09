@@ -54,14 +54,35 @@ namespace OurMarketBackend.Controllers
 
         // POST: /Listings/Create
         [HttpPost, Authorize, ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Listing listing)
+public async Task<IActionResult> Create(Listing listing)
+{
+    if (!ModelState.IsValid)
+    {
+        var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+        foreach (var error in errors)
         {
-            if (!ModelState.IsValid) return View(listing);
-
-            listing.UserId = _userManager.GetUserId(User)!; // tie to current user
-            _context.Listings.Add(listing);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            Console.WriteLine("ModelState error: " + error);
         }
+        return View(listing);
+    }
+
+    listing.UserId = _userManager.GetUserId(User)!; // tie to current user
+
+    _context.Listings.Add(listing);
+
+    try
+    {
+        await _context.SaveChangesAsync();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Error saving listing: " + ex.Message);
+        ModelState.AddModelError("", "Error saving listing: " + ex.Message);
+        return View(listing);
+    }
+
+    return RedirectToAction(nameof(Index));
+}
+
     }
 }
