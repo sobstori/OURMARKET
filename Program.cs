@@ -1,8 +1,9 @@
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OurMarketBackend.Data;
-using Microsoft.AspNetCore.Identity;
 using OurMarketBackend.Models;
+using OurMarketBackend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,9 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/Account/Login";
     options.LogoutPath = "/Account/Logout";
 });
+
+// Add ZIP lookup service
+builder.Services.AddSingleton<IZipLookup, ZipLookup>();
 
 var app = builder.Build();
 

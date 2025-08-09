@@ -1,47 +1,103 @@
-@model OurMarketBackend.Models.Listing
+@model ListingCreateViewModel
 @{
-    ViewData["Title"] = "Post a New Listing";
+    ViewData["Title"] = "Create Listing";
 }
-<h1>Post a New Listing</h1>
 
-<form asp-action="Create" method="post" class="post-form">
-    @Html.AntiForgeryToken()
-    <div asp-validation-summary="All" class="text-danger"></div>
+<h1>Create Listing</h1>
 
-    <label asp-for="Title"></label>
-    <input asp-for="Title" placeholder="Ex: Selling my MacBook Air" />
-    <span asp-validation-for="Title" class="text-danger"></span>
+<div class="row">
+    <div class="col-lg-8">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <label asp-for="Price"></label>
-    <input asp-for="Price" type="number" step="0.01" />
-    <span asp-validation-for="Price" class="text-danger"></span>
+            <!-- Title -->
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
 
-    <label asp-for="Category"></label>
-    <select asp-for="Category">
-        <option value="">Select a category</option>
-        <option>Electronics</option>
-        <option>Furniture</option>
-        <option>Clothing</option>
-        <option>Jobs</option>
-        <option>Other</option>
-    </select>
-    <span asp-validation-for="Category" class="text-danger"></span>
+            <!-- Description -->
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
 
-    <label asp-for="Location"></label>
-    <input asp-for="Location" />
-    <span asp-validation-for="Location" class="text-danger"></span>
+            <!-- Price -->
+            <div class="mb-3">
+                <label asp-for="Price" class="form-label"></label>
+                <input asp-for="Price" class="form-control" type="number" step="0.01" min="0" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
 
-    <label asp-for="ImageUrl"></label>
-    <input asp-for="ImageUrl" />
-    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            <!-- Category -->
+            <div class="mb-3">
+                <label asp-for="Category" class="form-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
 
-    <label asp-for="Description"></label>
-    <textarea asp-for="Description" rows="5"></textarea>
-    <span asp-validation-for="Description" class="text-danger"></span>
+            <!-- ZIP / City / State -->
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label asp-for="Zip" class="form-label"></label>
+                    <input asp-for="Zip" class="form-control" id="zip" />
+                    <span asp-validation-for="Zip" class="text-danger"></span>
+                </div>
+                <div class="col-md-5">
+                    <label asp-for="City" class="form-label"></label>
+                    <input asp-for="City" class="form-control" id="city" readonly />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="State" class="form-label"></label>
+                    <input asp-for="State" class="form-control" id="state" readonly />
+                </div>
+            </div>
 
-    <button type="submit" class="cta-button">Post Listing</button>
-</form>
+            <!-- Photos -->
+            <div class="mt-3">
+                <label class="form-label">Photos (1–3)</label>
+                <input type="file" name="Photos" multiple accept="image/*" class="form-control" />
+                <small class="text-muted d-block">JPG/PNG/WEBP/GIF, up to 5MB each.</small>
+                <span asp-validation-for="Photos" class="text-danger"></span>
+            </div>
+
+            <!-- Actions -->
+            <div class="mt-4 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // ZIP autofill
+        document.getElementById('zip')?.addEventListener('blur', async e => {
+            const z = e.target.value.trim();
+            if (/^\d{5}$/.test(z)) {
+                const r = await fetch(`/api/geo/zip/${z}`);
+                if (r.ok) {
+                    const { city, state } = await r.json();
+                    document.getElementById('city').value = city;
+                    document.getElementById('state').value = state;
+                }
+            }
+        });
+
+        // Enforce 1–3 images client-side
+        document.querySelector('input[name="Photos"]').addEventListener('change', function () {
+            if (this.files.length > 3) {
+                const dt = new DataTransfer();
+                [...this.files].slice(0, 3).forEach(f => dt.items.add(f));
+                this.files = dt.files;
+                alert('Please select at most 3 images.');
+            }
+        });
+    </script>
 }

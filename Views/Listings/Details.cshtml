@@ -1,6 +1,46 @@
 ﻿@model OurMarketBackend.Models.Listing
-<h1>@Model.Title</h1>
-<p>@Model.Description</p>
-<p><strong>Price:</strong> @Model.Price</p>
-<p><strong>Location:</strong> @Model.Location</p>
-<a asp-action="Index">Back</a>
+@{
+    ViewData["Title"] = "Listing Details";
+}
+
+<h1 class="mb-1">@Model.Title</h1>
+<p class="text-muted mb-3">
+    Posted by @Model.User?.UserName
+</p>
+
+<div class="mb-3">
+    <p>@Model.Description</p>
+    <p><strong>Price:</strong> @Model.Price</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Location))
+    {
+        var parts = Model.Location.Split(',', 2, StringSplitOptions.TrimEntries);
+        if (parts.Length == 2)
+        {
+            <p><strong>City:</strong> @parts[0]</p>
+            <p><strong>State:</strong> @parts[1]</p>
+        }
+        else
+        {
+            <p><strong>Location:</strong> @Model.Location</p>
+        }
+    }
+    <p><strong>Category:</strong> @Model.Category</p>
+</div>
+
+@if (Model.Images?.Any() == true)
+{
+    <div class="row g-3 mb-4">
+        @foreach (var img in Model.Images)
+        {
+            <div class="col-6 col-md-4 col-lg-3">
+                <img class="img-fluid rounded border" src="~/images/listings/@img.FileName" alt="Listing image" />
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p class="text-muted"><em>No images uploaded.</em></p>
+}
+
+<a asp-action="Index" class="btn btn-outline-secondary">Back</a>

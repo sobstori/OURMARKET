@@ -232,10 +232,6 @@ namespace OurMarketBackend.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -256,6 +252,26 @@ namespace OurMarketBackend.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Listings");
+                });
+
+            modelBuilder.Entity("OurMarketBackend.models.ListingImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ListingId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ListingId");
+
+                    b.ToTable("ListingImages");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -318,6 +334,22 @@ namespace OurMarketBackend.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("OurMarketBackend.models.ListingImage", b =>
+                {
+                    b.HasOne("OurMarketBackend.Models.Listing", "Listing")
+                        .WithMany("Images")
+                        .HasForeignKey("ListingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Listing");
+                });
+
+            modelBuilder.Entity("OurMarketBackend.Models.Listing", b =>
+                {
+                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

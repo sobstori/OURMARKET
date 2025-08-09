@@ -18,6 +18,8 @@ packages/
 *.db
 *.db-shm
 *.db-wal
+wwwroot/images/listings
+Migrations/
 
 ## Temporary files
 ~$*

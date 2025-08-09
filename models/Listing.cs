@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using OurMarketBackend.models;
 using System.ComponentModel.DataAnnotations;
 
 namespace OurMarketBackend.Models
@@ -20,18 +21,18 @@ namespace OurMarketBackend.Models
         [Required(ErrorMessage = "Please enter a location")]
         public string Location { get; set; } = null!;
 
-        [Required(ErrorMessage = "Please enter an image URL")]
-        [Url(ErrorMessage = "Please enter a valid URL")]
-        public string ImageUrl { get; set; } = null!;
-
         [Required(ErrorMessage = "Please select a category")]
         public string Category { get; set; } = null!;
 
         //ownership
         [Required] 
         public string UserId { get; set; } = null!;
+
         [BindNever]
         [ValidateNever]
         public ApplicationUser? User { get; set; }
+
+        // images
+        public List<ListingImage> Images { get; set; } = new();
     }
 }
